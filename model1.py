@@ -21,9 +21,9 @@ def generator(samples, batch_size=32):
             image_names = []
             measurements = []
             
-            for x in range(1, len(batch_samples)):
-                image = batch_samples.get_value(x, 0)
-                measurement = batch_samples.get_value(x, 3)
+            for index in batch_samples.index:
+                image = batch_samples.get_value(index, 0)
+                measurement = batch_samples.get_value(index, 3)
                 image_names.append('data/'+image)
                 measurements.append(measurement)
                 
